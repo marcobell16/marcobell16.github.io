@@ -86,7 +86,6 @@ p { margin: 0; }
   padding: 9px 8px 26px; margin: 0 -8px;
 }
 .works .t, .presslist .t { font-size: 15px; line-height: 1.2; max-width: 22em; }
-.works li:nth-child(even) .t { padding-left: 4.5rem; }
 .works .c, .presslist .c { color: var(--grey); text-align: right; font-variant-numeric: tabular-nums; }
 .works .thumb { display: none; }
 @media (hover: hover) {
@@ -116,10 +115,11 @@ p { margin: 0; }
 .walltext .credit { color: var(--grey); font-size: 14px; margin-top: 2em; }
 .plates + .walltext { margin-top: 16vh; margin-bottom: 0; }
 
-.plates { row-gap: 140px; align-items: start; }
-.plate, .film { grid-column: var(--c); margin: 0; }
-.plate img { max-height: 88vh; width: auto; }
-.plate.tall img { width: 100%; }
+/* Plates stack in one column, every image starting on the title's left edge */
+.plates { row-gap: 104px; align-items: start; }
+.plate, .film { grid-column: 2 / 13; margin: 0; }
+.plate img { max-height: 86vh; width: auto; max-width: 100%; }
+.film { max-width: 1100px; }
 figcaption { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; line-height: 1.35; }
 .film .frame { position: relative; aspect-ratio: 16 / 9; background: #f2f2f2; }
 .film iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
@@ -186,7 +186,6 @@ figcaption { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; line-he
   .home .stage { display: none; }
   .home .index, .home .intro { grid-column: 1 / -1; grid-row: auto; }
   .works a, .presslist a, .presslist .row { grid-template-columns: 2.5rem 1fr; padding-bottom: 18px; }
-  .works li:nth-child(even) .t { padding-left: 0; }
   .works .c, .presslist .c { grid-column: 2; text-align: left; margin-top: 4px; overflow-wrap: anywhere; }
   .works .thumb { display: block; grid-column: 1 / -1; margin-top: 14px; width: 100%; }
 
@@ -199,8 +198,6 @@ figcaption { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; line-he
 
   .plates { row-gap: 56px; }
   .plate, .film { grid-column: 1 / -1; }
-  .plate.tall:nth-child(odd) { grid-column: 1 / 6; }
-  .plate.tall:nth-child(even) { grid-column: 2 / 7; }
   .plate img { max-height: none; width: 100%; }
 
   .pager .prev, .pager .next { grid-column: 1 / -1; }
