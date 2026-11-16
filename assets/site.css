@@ -50,18 +50,13 @@ p { margin: 0; }
 .top nav { grid-column: 8 / 13; display: flex; justify-content: flex-end; gap: 28px; }
 .top nav a[aria-current="page"], .top nav a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
-/* The name, set large */
+/* The name */
 .bigname {
-  display: flex; justify-content: space-between;
   margin: 0; padding: 0 var(--pad);
-  font-size: 20vw; font-weight: 500; line-height: .74;
-  letter-spacing: -.065em;
-  overflow: hidden;
+  font-size: clamp(44px, 7vw, 116px); font-weight: 500; line-height: .95;
+  letter-spacing: -.045em;
 }
-.bigname span { display: block; padding-bottom: .06em; }
-.bigname span:first-child { margin-left: -.045em; }
-.bigname span:last-child { margin-right: -.01em; }
-.bigname.lead { margin-top: 9vh; margin-bottom: 18px; }
+.bigname.lead { margin-top: 10vh; margin-bottom: 22px; }
 
 /* Home */
 .home-grid { margin-top: 12px; row-gap: 48px; align-items: start; }
