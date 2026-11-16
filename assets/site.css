@@ -168,8 +168,10 @@ figcaption { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; line-he
 /* Desktop: everything hangs from two lines, column 1 and column 7.
    The phone layout below is left exactly as it was. */
 @media (min-width: 900px) {
-  .top .role { grid-column: 7 / 10; }
-  .top nav { grid-column: 10 / 13; }
+  .top { row-gap: 2px; }
+  .top .name { grid-column: 1 / 7; grid-row: 1; }
+  .top .role { grid-column: 1 / 7; grid-row: 2; }
+  .top nav { grid-column: 7 / 13; grid-row: 1; }
 
   /* Home: the header carries the name, once */
   .home > .bar { margin-top: 10vh; }
@@ -185,6 +187,7 @@ figcaption { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; line-he
   .room-head { padding-top: 14px; padding-bottom: 10vh; row-gap: 22px; }
   .room-head .pn { grid-column: 1 / 7; grid-row: 1; padding-top: 0; }
   .room-head .meta { grid-column: 7 / 13; grid-row: 1; text-align: left; padding-top: 0; }
+  .room-head .meta .readlink { margin-top: 0; }
   .room-head h1, .simple .room-head h1 {
     grid-column: 1 / 13; grid-row: 2;
     font-size: clamp(34px, 3.4vw, 58px); line-height: 1.04; letter-spacing: -.03em;
