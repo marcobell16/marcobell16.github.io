@@ -196,8 +196,31 @@ figcaption { display: flex; gap: 16px; margin-top: 8px; font-size: 12px; line-he
   .simple .room-head h1 { grid-row: 1; }
   .walltext .col, .simple .col { grid-column: 7 / 13; }
 
+  /* Title on the left, text on the right, starting on the same line */
+  .room, .simple { margin-top: 8vh; }
+  .opening {
+    display: grid; grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: var(--gap); padding: 0 var(--pad); align-items: start;
+    margin-bottom: 12vh;
+  }
+  .simple .opening { margin-bottom: 0; }
+  .opening > * { display: block; margin: 0; padding: 14px 0 0; }
+  .opening > .room-head { grid-column: 1 / 7; padding-right: var(--gap); }
+  .opening > .room-head .pn { display: block; margin-bottom: 22px; }
+  .opening > :not(.room-head) { grid-column: 7 / 13; }
+
+  /* A long text after the photographs reads in two columns across the page */
+  .plates + .walltext { margin-top: 14vh; }
+  .plates + .walltext .col { grid-column: 1 / 13; max-width: none; column-count: 2; column-gap: var(--gap); }
+  .plates + .walltext .col p { break-inside: avoid-column; }
+
+  /* Wide photographs take the full row; upright ones pair up, two to a row */
+  .plates { row-gap: 88px; }
   .plate, .film { grid-column: 1 / 13; }
+  .plate.tall { grid-column: span 6; }
+  .plate.tall img { max-height: 84vh; }
   .plate.wide img { max-height: 84vh; }
+  .pager, .bottom { margin-top: 14vh; }
 
   .foot > span:first-child { grid-column: 1 / 7; }
   .foot .social { grid-column: 7 / 10; }
